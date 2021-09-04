@@ -46,7 +46,6 @@ intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
 slash = SlashCommand(client, sync_commands=True)
-guild_ids = [272155212347736065, 883113874738532362]
 
 settings = {
     'punishment': {
@@ -188,7 +187,6 @@ async def _apply_punishments(message:discord.Message or discord.TextChannel, use
     base_description='Learn 2 count',
     name='statistics',
     description='Get a user\'s statistics',
-    guild_ids=guild_ids,
     options=[
             {
                 'name': 'user',
@@ -232,7 +230,6 @@ async def _counting_userinfo(ctx, user:discord.User=None):
     base_description='Learn 2 count',
     name='toggle',
     description='Toggles counting in this channel. Requires manage server',
-    guild_ids=guild_ids
     )
 async def _counting_toggle(ctx):
     n = '\n'
@@ -257,7 +254,6 @@ async def _counting_toggle(ctx):
     base_description='Learn 2 count',
     name='list',
     description='View Stuff',
-    guild_ids=guild_ids,
     options=[
         {
             'name': 'option',
@@ -313,7 +309,7 @@ async def _counting_list_channels(ctx):
     subcommand_group_description='View or adjust settings',
     name='view',
     description='View any or all settings',
-    guild_ids=guild_ids, options=[
+    options=[
         {
             'name': 'setting',
             'description': 'Name of the setting or "list" to list',
@@ -333,7 +329,7 @@ async def _counting_settings_view(ctx, setting:str='list'):
     subcommand_group_description='View or adjust settings',
     name='adjust',
     description='Change a setting. Requires manage server',
-    guild_ids=guild_ids, options=[
+    options=[
         {
             'name': 'setting',
             'description': 'Name of the setting',
