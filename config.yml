@@ -1,0 +1,90 @@
+Token: <TOKEN>
+
+Loss:
+  Quips:
+    - 'You know how the game works, right?'
+    - 'Remember, numbers go 1, 2, 3...'
+    - 'Go back to preschool'
+    - 'How?'
+    - 'Pranked'
+  Verbs:
+    - 'messed up'
+    - 'messed up'
+    - 'messed up'
+    - 'screwed up'
+    - 'puked'
+    - 'threw'
+    - 'hurt themseves in their confusion'
+    - 'just gave up'
+    - "does'nt care anymore"
+
+Punishments:
+  Shame:
+    - 'Shame!'
+    - '{ping} sucks at counting'
+    - "\"{message}\""
+    - "Stop typing if you can't even count"
+    - "How can you have the audacity to use 26 letters if you can't even figure out 10 numbers"
+    - 'You need to get good'
+    - 'Back to school'
+    - "1, 2, 3, 4. What's that? Oh, I'm just doing something you can't"
+    - 'Do your parents know you suck?'
+    - 'Maybe you should have paid attention in preschool'
+    - 'Did you just... flatline? That explains a lot'
+    - 'You know, these messages can end anytime an admin changes them. Go beg!'
+  Mute:
+    - 'Shut up and learn to count'
+    - "Think before you speak and this won't happen again"
+    - "Look at me! My name is {name} and I can't talk because I suck at counting"
+    - 'Use your insane typing skill to complain to your admin'
+
+Statistics:
+  Ignore: # Statistics to remove from the list
+    - "last_loss"
+    - "times_cheated"
+    - "times_attempted_to_cheat"
+  Me:
+    - "That's me."
+    - '*Statistics Witheld*\nDepression likely'
+    - 'Nice try...'
+    - "You don't wanna see that"
+  Bot:
+    - "That's a bot."
+    - 'That bot sucks at counting. Trust me.'
+    - 'Ewww, you asked me to look at another bot? Gross'
+    - "You got other bots? You're cheating on me!"
+
+Toggle:
+  Fail:
+    - 'Nice try'
+    - 'Time to beg for admin!'
+    - 'Need to call in a favor?'
+
+List:
+  Incorrect Option:
+    - 'Give a real option'
+    - 'Forget how to use discord interactions?'
+  No Channels: # If you're not admin and no channels
+    - "Nice try. Ya can't add one"
+    - 'Get better admins'
+    - 'Go ask Daddy for help'
+  Admin:
+    - "There are no counting channels\nAdd one with /counting toggle"
+
+Settings:
+  No Perms:
+    - 'Nice try.'
+    - 'You think I would just let you do that?'
+    - 'Loser'
+  Wrong Setting:
+    - "You shouln't use the bot if you can't spell"
+    - 'Learn copy and paste'
+    - 'Loser'
+  Set to None:
+    - 'Nice job setting {settingname} to nothing...'
+    - 'You want to set a value?'
+    - 'Is this a joke? SET IT TO SOMETHING!'
+  Wrong Type:
+    - 'Learn variable types'
+    - "You've **got** to be kidding me"
+    - 'Bruh'
