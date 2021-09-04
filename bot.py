@@ -142,7 +142,7 @@ async def on_message(message):
                 
                 quip = get_message(['loss', 'quips'], message=message)
                 verb = get_message(['loss', 'verbs'], message=message)
-                await message.channel.send( verb + '\n' + quip)
+                await message.channel.send(f'<@{message.author.id}> {verb}' + '\n' + quip)
                 
                 # Apply punishments
                 await _apply_punishments(message, message.author, server_settings, usrinfo, apply_onetime=True)
