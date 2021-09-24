@@ -45,7 +45,7 @@ with open('./config.yml') as file:
 intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
-slash = SlashCommand(client, sync_commands=True)
+slash = SlashCommand(client, debug_guild=730253459537920065)
 
 settings = {
     'punishment': {
@@ -248,6 +248,50 @@ async def _counting_toggle(ctx):
         quip = get_message(['toggle', 'fail'], ctx=ctx)
         ed = 'Disabling' if str(ctx.channel.id) in server_channels else 'Enabling'
         await ctx.send(f'{ed} counting here requires manage server{n}{quip}')
+
+@slash.subcommand(
+    base='counting',
+    base_description='Learn 2 count',
+    name='cheat',
+    description='Sets this channel\'s number. Requires manage server',
+    options=[
+        {
+            'name': 'number',
+            'description': 'Which number do you want to start at?',
+            'type': 4,
+            'required': True,
+        }
+    ]
+    )
+async def _counting_admin_cheat(ctx, number:int=0):
+    # Parse number to int
+    try:
+        number = int(float(number)+0.5)
+    except ValueError:
+        await ctx.send(get_message(['settings', 'wrong_type'], ctx=ctx) + '\nEnter a real number next time...', hidden=True)
+        return
+
+    counting_channels = server_config.get(ctx.guild.id, 'counting_channels')
+    
+    if not str(ctx.channel.id) in counting_channels:
+        await ctx.send(get_message(['admin_cheat', 'fail', 'not_counting_channel'], ctx=ctx), hidden=True)
+        return
+    if number <= 0:
+        await ctx.send(get_message(['admin_cheat', 'fail', 'number_low'], ctx=ctx), hidden=True)
+        return
+    
+    if 'number' not in counting_channels[str(ctx.channel.id)] or not isinstance(counting_channels[str(ctx.channel.id)], dict):
+        counting_channels[str(ctx.channel.id)] = {
+            'number': number,
+            'user': '000000000000000000'
+        }
+    else: 
+        counting_channels[str(ctx.channel.id)]['number'] = number
+        counting_channels[str(ctx.channel.id)]['user'] = '000000000000000000'
+    
+    server_config.set(ctx.guild.id, 'counting_channels', counting_channels)
+    await ctx.send(get_message(['admin_cheat', 'announcement'], ctx=ctx, additional_kwds={'number': str(number)}))
+    
 
 @slash.subcommand(
     base='counting',

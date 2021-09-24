@@ -41,6 +41,7 @@ Punishments:
 Statistics:
   Ignore: # Statistics to remove from the list
     - "last_loss"
+    - "last_cheated"
     - "times_cheated"
     - "times_attempted_to_cheat"
   Me:
@@ -88,3 +89,15 @@ Settings:
     - 'Learn variable types'
     - "You've **got** to be kidding me"
     - 'Bruh'
+
+Admin Cheat:
+  Fail:
+    Not Counting Channel:
+      - "Bro. This isn't a counting channel"
+      - "A cheater who can't even enter their command in a counting channel? wow that's low"
+    Number Low:
+      - "I know you like negatives, just look at your IQ, but let's stick to natural numbers for now"
+      - "{number}? Seriously? If you like below 0 so much just go to the arctic"
+  Announcement:
+    - "{name} has set the number to {number}. Enjoy"
+    - "ATTENTION! {name} loves {number} so much that they want you to start there."
