@@ -10,7 +10,8 @@ Discord counting with punishments
 ## General Info
 Every played discord counting? Ever wished to ban everyone who messed you up? This does just that, along with many other customizable punishments. Messages can be customized in ```config.yml``` if, for some reason, the bot's snarky personality isn't to your liking.
 
-!![Banner](.github/demo.jpg)
+![Banner](.github/demo.jpg) \
+*Reactions are optional*
 
 ## Technologies
 This project is created with:
