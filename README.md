@@ -1,33 +1,34 @@
 # Counting Royale
-Discord counting with punishments
+A Discord bot for counting games, with per-channel rules and configurable consequences.
 
-## Table of contents
+![Counting Royale in a Discord channel](.github/demo.jpg)
+
+## Table of Contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Commands](#commands)
 
 ## General Info
-Every played discord counting? Ever wished to ban everyone who messed you up? This does just that, along with many other customizable punishments. Messages can be customized in ```config.yml``` if, for some reason, the bot's snarky personality isn't to your liking.
-
-![Banner](.github/demo.jpg) \
-*Reactions are optional*
+Set up a counting channel and choose what happens when someone breaks the sequence. Edit `config.yml` to change the bot's messages.
 
 ## Technologies
 This project is created with:
-* [Flask](https://github.com/Rapptz/discord.py): 1.1.2
+* [discord.py](https://github.com/Rapptz/discord.py): 1.7.3
 * [Discord Interactions](https://github.com/goverfl0w/discord-interactions): 3.0.1
 * [PyYaml](https://pyyaml.org/): 5.1b1
 * [Number Parser](https://github.com/scrapinghub/number-parser): 0.2.1
 
 ## Setup
-Clone the Repo \
-```git clone https://github.com/Pop101/CountingRoyale``` \
-Enter the Repo and Install requirements \
-```cd CountingRoyale && sudo python3 -m pip install -r requirements``` \
-Insert your token in ```config.yml``` \
-Run the app! \
-```sudo python3 bot.py```
+Clone the repository and run these commands from its root in a Python virtual environment:
+
+```sh
+python -m pip install -r requirements.txt
+python bot.py
+```
+
+Set your own bot token in local `config.yml` before starting. Do not commit this token. This is a legacy dependency stack; current Discord compatibility is not verified.
+
 
 ## Commands
 The bot uses slash commands with a base command of ```/counting``` \
